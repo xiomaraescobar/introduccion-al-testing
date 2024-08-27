@@ -23,5 +23,6 @@ function calculatePercentage(total, part) {
 module.exports = {
   sum,
   multiply,
-  divide
+  divide,
+  calculatePercentage
 };

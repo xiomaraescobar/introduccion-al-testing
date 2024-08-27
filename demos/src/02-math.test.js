@@ -1,4 +1,4 @@
-const { sum, multiply, divide} = require('./02-math');
+const { sum, multiply, divide, calculatePercentage} = require('./02-math');
 
 test("adds 1 + 3 should be 4",  () => {
   const rta = sum(1,3);
@@ -32,4 +32,14 @@ test("should correctly divide a large number by a small number", () => {
 test ("should correctly divide two negative numbers", () => {
   const result = divide(-50, -20);
   expect(result).toBe(2.5);
+  });
+
+  test("should return correct percentage when both total and part are positive numbers", () => {
+    const result = calculatePercentage(200, 50);
+    expect(result).toBe(25);
+  });
+
+  test("should return 0 if the total is 0 to avoid division by zero", () => {
+    const result = calculatePercentage(0, 50);
+    expect(result).toBe(0);
   });
